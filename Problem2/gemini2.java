@@ -7,7 +7,7 @@ public class gemini2 {
         int n = input.nextInt();
         int[] nums = new int[n];
         
-        // Use long instead of int to prevent integer overflow!
+   
         long sum = 0; 
         
         for (int i = 0; i < n; i++) {

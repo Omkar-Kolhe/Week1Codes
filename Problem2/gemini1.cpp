@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    // Fast I/O
+
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
@@ -16,7 +16,7 @@ int main() {
             total_sum += a;
         }
         
-        // If the sum is divisible by n, it's possible to equalize
+  
         if (total_sum % n == 0) {
             cout << "YES\n";
         } else {

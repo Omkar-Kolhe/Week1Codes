@@ -12,7 +12,7 @@ public class gemini1 {
                 totalSum += sc.nextLong();
             }
             
-            // If the sum is divisible by n, it's possible to equalize
+          
             if (totalSum % n == 0) {
                 System.out.println("YES");
             } else {

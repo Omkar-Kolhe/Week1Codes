@@ -5,7 +5,7 @@ public class claude2 {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
         int[] nums = new int[n];
-        long sum = 0; // use long to avoid overflow
+        long sum = 0; 
         for (int i = 0; i < n; i++) {
             nums[i] = input.nextInt();
             sum += nums[i];
