@@ -3,7 +3,7 @@ import bisect
 
 
 def main():
-    # Fast I/O reading all data at once
+
     lines = sys.stdin.read().split()
     if not lines:
         return
@@ -28,18 +28,17 @@ def main():
             output.append("YES")
             continue
 
-        # Sort the array to group contiguous value segments
         arr.sort()
 
-        # Find the indices of initial_val and target_x in the sorted array
+     
         pos1 = bisect.bisect_left(arr, initial_val)
         pos2 = bisect.bisect_left(arr, target_x)
 
-        # The number of steps in the sorted array must match the value difference
+
         index_diff = abs(pos1 - pos2)
         value_diff = abs(initial_val - target_x)
 
-        # A match means every intermediate integer is present in the array
+
         if index_diff == value_diff:
             output.append("YES")
         else:

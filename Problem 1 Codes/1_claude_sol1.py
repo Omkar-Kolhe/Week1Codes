@@ -1,4 +1,4 @@
-# Solution 1: Sort + block grouping (contiguous-value blocks via sorting)
+
 import sys
 
 
@@ -19,10 +19,7 @@ def main():
 
         sorted_vals = sorted(arr)
 
-        # Group values into blocks: consecutive sorted values differing
-        # by exactly 1 belong to the same block, since within such a
-        # block any target permutation is reachable through repeated
-        # adjacent-value swaps.
+     
         block_of = {}
         current_block = 0
         block_of[sorted_vals[0]] = current_block

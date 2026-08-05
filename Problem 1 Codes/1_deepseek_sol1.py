@@ -12,10 +12,10 @@ def solve():
         x = int(next(it))
         a = [int(next(it)) for _ in range(n)]
 
-        # Find position of X
+   
         pos = a.index(x)
 
-        # Find min and max in prefix up to pos
+   
         min_val = float('inf')
         max_val = float('-inf')
         for i in range(pos + 1):
@@ -24,7 +24,6 @@ def solve():
             if a[i] > max_val:
                 max_val = a[i]
 
-        # Check if prefix forms a consecutive block
         if max_val - min_val + 1 == pos + 1:
             out_lines.append("YES")
         else:

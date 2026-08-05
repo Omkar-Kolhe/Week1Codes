@@ -18,7 +18,7 @@ void solve_test_case()
 
     long long start_val = a[0];
 
-    // If Champak is already at the front
+
     if (start_val == x)
     {
         cout << "YES\n";
@@ -29,14 +29,13 @@ void solve_test_case()
     long long right_bound = max(start_val, x);
     long long required_elements = right_bound - left_bound + 1;
 
-    // If the difference is larger than N, it's impossible to have all intermediate values
+
     if (required_elements > n)
     {
         cout << "NO\n";
         return;
     }
 
-    // Count how many elements in the array fall into the [left_bound, right_bound] range
     int present_count = 0;
     for (int i = 0; i < n; ++i)
     {
@@ -46,7 +45,7 @@ void solve_test_case()
         }
     }
 
-    // If every integer in the range is present, they form a contiguous swap sequence
+
     if (present_count == required_elements)
     {
         cout << "YES\n";
@@ -59,7 +58,7 @@ void solve_test_case()
 
 int main()
 {
-    // Fast I/O
+    
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 

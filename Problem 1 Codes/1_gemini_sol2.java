@@ -4,7 +4,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-// Removed 'public' so this can be saved in any file (e.g., 1_gemini_sol2.java)
 class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -34,17 +33,16 @@ class Main {
                 continue;
             }
 
-            // Sort the array to align consecutive ranks
+        
             Arrays.sort(arr);
 
-            // Locate the positions of the two values
             int posFirst = Arrays.binarySearch(arr, firstVal);
             int posTarget = Arrays.binarySearch(arr, targetX);
 
             int indexDiff = Math.abs(posFirst - posTarget);
             int valueDiff = Math.abs(firstVal - targetX);
 
-            // If the differences match, no numbers are missing between them
+
             if (indexDiff == valueDiff) {
                 writer.println("YES");
             } else {

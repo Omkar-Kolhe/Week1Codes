@@ -25,7 +25,7 @@ void solve()
 
     bool ok = true;
     if ((int)seen.size() != pos + 1)
-        ok = false; // duplicates shouldn't happen
+        ok = false;
     else if (max_val - min_val + 1 != pos + 1)
         ok = false;
 

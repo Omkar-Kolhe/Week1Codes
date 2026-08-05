@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-// Removed 'public' so this can be saved in any file (e.g., 1_gemini_sol1.java)
+
 class Main {
     public static void main(String[] args) {
         FastScanner scanner = new FastScanner();
@@ -30,8 +30,7 @@ class Main {
             int minVal = Math.min(startElement, x);
             int maxVal = Math.max(startElement, x);
 
-            // The number of elements required to form a contiguous sequence
-            // Using long to prevent any potential overflow issues during subtraction
+            
             long requiredLength = (long) maxVal - minVal + 1;
 
             if (requiredLength > n) {
@@ -55,7 +54,6 @@ class Main {
         out.flush();
     }
 
-    // Standard fast I/O class for competitive programming
     static class FastScanner {
         BufferedReader br;
         StringTokenizer st;

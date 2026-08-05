@@ -15,7 +15,7 @@ def solve():
         a = input_data[idx:idx + n]
         idx += n
 
-        # Convert to integers and find position of X
+     
         arr = [int(v) for v in a]
         pos = arr.index(x)
 
@@ -32,9 +32,6 @@ def solve():
             if val > max_val:
                 max_val = val
 
-        # Check contiguity: all integers from min_val to max_val must be present
-        # Since all values are distinct, this is equivalent to:
-        # max_val - min_val + 1 == size of prefix_set
         if max_val - min_val + 1 == len(prefix_set) == pos + 1:
             out.append("YES")
         else:

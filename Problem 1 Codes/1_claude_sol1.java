@@ -20,10 +20,6 @@ class Main {
             long[] sortedVals = arr.clone();
             Arrays.sort(sortedVals);
 
-            // Assign block ids: values forming a contiguous run (consecutive
-            // integers present in the array) belong to the same block,
-            // since within a block any permutation is reachable via
-            // repeated adjacent-value swaps.
             HashMap<Long, Integer> blockOf = new HashMap<>(N * 2);
             int currentBlock = 0;
             blockOf.put(sortedVals[0], currentBlock);

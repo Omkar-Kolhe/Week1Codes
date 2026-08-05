@@ -24,20 +24,18 @@ void run_case()
         return;
     }
 
-    // Sort to group contiguous values
     sort(arr.begin(), arr.end());
 
     long long min_val = min(first_element, target);
     long long max_val = max(first_element, target);
 
-    // Find their positions in the sorted sequence
+    
     auto it_min = lower_bound(arr.begin(), arr.end(), min_val);
     auto it_max = lower_bound(arr.begin(), arr.end(), max_val);
 
     long long index_difference = distance(it_min, it_max);
     long long value_difference = max_val - min_val;
 
-    // If the index difference matches the value difference, there are no gaps
     if (index_difference == value_difference)
     {
         cout << "YES\n";
@@ -50,7 +48,7 @@ void run_case()
 
 int main()
 {
-    // Fast I/O
+
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 

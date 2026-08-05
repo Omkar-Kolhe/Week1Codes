@@ -1,5 +1,4 @@
-# Solution 2: Expand the contiguous value-range around X using a set,
-# then check whether the front element lies within that range.
+
 import sys
 
 

@@ -1,4 +1,4 @@
-// Solution 1: Sort + block grouping (union of consecutive values via sorting)
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,10 +19,7 @@ int main()
         vector<long long> sortedVals = arr;
         sort(sortedVals.begin(), sortedVals.end());
 
-        // Assign a block id to each distinct value: values that form a
-        // contiguous run (difference of 1 between consecutive sorted
-        // elements) belong to the same block, since within a block any
-        // permutation is reachable via repeated adjacent-value swaps.
+
         unordered_map<long long, int> blockOf;
         blockOf.reserve(N * 2);
 

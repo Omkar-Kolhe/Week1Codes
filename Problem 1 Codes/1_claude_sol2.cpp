@@ -1,5 +1,4 @@
-// Solution 2: Hash-set expansion to find the contiguous value-range
-// containing X, then check if the front element falls in that range.
+
 #include <bits/stdc++.h>
 using namespace std;
 

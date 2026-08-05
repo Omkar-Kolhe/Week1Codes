@@ -1,6 +1,5 @@
 
-// Solution 2: Expand contiguous value-range around X using a HashSet,
-// then check whether the front element falls within that range.
+
 import java.io.*;
 import java.util.*;
 
