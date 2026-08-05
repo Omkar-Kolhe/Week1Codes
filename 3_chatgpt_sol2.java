@@ -2,29 +2,21 @@ import java.util.*;
 
 public class Main {
 
-    // Stores prime factors of M and their required exponents.
     static ArrayList<Integer> primes = new ArrayList<>();
     static ArrayList<Integer> requiredExponents = new ArrayList<>();
 
-    // Number of distinct prime factors.
     static int factorCount;
 
-    // Total number of compressed states.
     static int totalStates;
 
-    // Used for encoding exponent vectors into a single integer.
     static int[] stateMultiplier;
 
-    // Decoded exponent values for every state.
     static int[][] stateValues;
 
-    // Precomputed transition table.
     static int[][] mergedState;
 
-    // Memoization for recursion.
     static HashMap<Long, Boolean> memo = new HashMap<>();
 
-    // Converts exponent vector into encoded state.
     static int encodeState(int[] exponents) {
 
         int state = 0;
@@ -36,8 +28,7 @@ public class Main {
         return state;
     }
 
-    // Returns true if this starting pair eventually produces
-    // a number divisible by M.
+
     static boolean isCursed(int firstState, int secondState) {
 
         long key = (((long) firstState) << 32) | (secondState & 0xffffffffL);
@@ -47,13 +38,11 @@ public class Main {
 
         int nextState = mergedState[firstState][secondState];
 
-        // Required exponents for every prime factor are collected.
         if (nextState == totalStates - 1) {
             memo.put(key, true);
             return true;
         }
 
-        // Sequence stops changing.
         if (nextState == secondState) {
             memo.put(key, false);
             return false;
@@ -71,7 +60,6 @@ public class Main {
 
         int M = sc.nextInt();
 
-        // ---------------- Prime Factorization ----------------
 
         int temp = M;
 
@@ -98,7 +86,6 @@ public class Main {
 
         factorCount = primes.size();
 
-        // ---------------- State Encoding ----------------
 
         stateMultiplier = new int[factorCount];
 
@@ -124,7 +111,6 @@ public class Main {
             }
         }
 
-        // ---------------- Precompute State Transitions ----------------
 
         mergedState = new int[totalStates][totalStates];
 
@@ -146,7 +132,6 @@ public class Main {
             }
         }
 
-        // ---------------- State of Every Number ----------------
 
         int[] numberState = new int[M];
 
@@ -168,7 +153,6 @@ public class Main {
             numberState[number] = encodeState(exponents);
         }
 
-        // ---------------- Count Cursed Pairs ----------------
 
         long answer = 0;
 
